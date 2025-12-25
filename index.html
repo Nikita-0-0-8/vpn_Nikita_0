@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake VPN Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-shield-alt"></i> FakeVPN Protector</h1>
+        <p class="subtitle">Симулятор безопасного подключения. Настоящий VPN не активируется.</p>
+
+        <div class="status-card">
+            <div class="status-header">
+                <h2>Текущий статус</h2>
+                <div id="statusIndicator" class="status-offline">
+                    <div class="status-dot"></div>
+                    <span>ОФФЛАЙН</span>
+                </div>
+            </div>
+            <p class="ip-text">Ваш IP: <span id="ipAddress">192.168.1.1</span></p>
+        </div>
+
+        <div class="vpn-card">
+            <h2><i class="fas fa-globe-americas"></i> Виртуальная сеть</h2>
+            <p>Выберите фейковую страну для подключения:</p>
+
+            <div class="country-selector">
+                <div class="country" data-ip="104.18.45.12" data-country="США">
+                    <i class="fas fa-flag-usa"></i> США
+                </div>
+                <div class="country" data-ip="81.19.143.87" data-country="Германия">
+                    <i class="fas fa-landmark"></i> Германия
+                </div>
+                <div class="country" data-ip="103.102.166.55" data-country="Япония">
+                    <i class="fas fa-torii-gate"></i> Япония
+                </div>
+            </div>
+
+            <p>Новый IP: <strong id="newIp">---.---.---.---</strong></p>
+            <p>Страна: <strong id="newCountry">Не выбрана</strong></p>
+
+            <button id="toggleButton" class="btn-offline">
+                <i class="fas fa-power-off"></i> ВКЛЮЧИТЬ VPN
+            </button>
+            <p class="disclaimer">
+                <i class="fas fa-exclamation-triangle"></i> Это учебный симулятор. Ваше реальное интернет-соединение <strong>не изменится</strong>.
+            </p>
+        </div>
+
+        <div class="log-card">
+            <h3><i class="fas fa-history"></i> Журнал событий</h3>
+            <ul id="logList">
+                <li>Готов к работе. Нажмите "ВКЛЮЧИТЬ VPN".</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
